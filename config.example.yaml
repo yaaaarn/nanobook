@@ -1,0 +1,20 @@
+name: nanobook
+description: a self-hostable guestbook
+
+# recommended:store the password as a bcrypt hash.
+# generate one with: bun -e "import bcrypt from 'bcryptjs'; console.log(await bcrypt.hash('yourpassword', 12))"
+# falls back to plaintext comparison for dev convenience, but logs a warning.
+admin:
+  username:
+  password:
+
+extraFields:
+  email:
+    type: input
+    label: Email
+    private: true
+    required: false
+  website:
+    type: input
+    label: Website
+    required: false
