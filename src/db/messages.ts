@@ -3,7 +3,8 @@ import { PAGE_LIMIT } from "../consts";
 import { db } from "../db";
 
 import { messagesTable } from "./schema";
-import { asc, desc, eq } from "drizzle-orm";
+
+import { desc, eq } from "drizzle-orm";
 
 export async function getMessages(
   query: Record<string, string>,
