@@ -2,7 +2,7 @@
   "name": "nanobook",
   "module": "index.ts",
   "type": "module",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "bun run --hot src/index.ts",
