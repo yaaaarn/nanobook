@@ -1,9 +1,17 @@
 name: nanobook
-description: a self-hostable guestbook
+header: |
+  <br/><br/>
+  <center>
+    <img src="/nanobook.png" alt="nanobook logo" width="75%" />
 
-# recommended:store the password as a bcrypt hash.
-# generate one with: bun -e "import bcrypt from 'bcryptjs'; console.log(await bcrypt.hash('yourpassword', 12))"
-# falls back to plaintext comparison for dev convenience, but logs a warning.
+    a **self-hostable** guestbook!
+  </center>
+
+# """
+# recommended: generate a password hash with:
+# bun -e "console.log(await Bun.password.hash('yourpassword'))"
+# """
+
 admin:
   username:
   password:
@@ -14,7 +22,10 @@ extraFields:
     label: Email
     private: true
     required: false
-  website:
-    type: input
-    label: Website
-    required: false
+
+# """
+# note: emojis should be put into the 'public' directory!!
+# """
+
+# emojis:
+#   love: /emojis/love.gif

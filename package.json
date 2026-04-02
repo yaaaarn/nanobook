@@ -4,27 +4,29 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "build": "bun run build.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/sanitize-html": "^2.16.1",
+    "drizzle-kit": "^0.31.10",
     "zod": "^4.3.6"
   },
   "peerDependencies": {
     "typescript": "^5"
   },
   "dependencies": {
-    "@elysiajs/cookie": "^0.8.0",
     "@elysiajs/html": "^1.4.0",
+    "@elysiajs/static": "^1.4.7",
     "@kitajs/ts-html-plugin": "^4.1.4",
-    "bcryptjs": "^3.0.3",
+    "@tqman/nice-logger": "^1.1.1",
+    "drizzle-orm": "^0.45.2",
     "elysia": "^1.4.28",
-    "elysia-csrf": "^0.1.0",
     "elysia-ip": "^1.0.10",
     "elysia-rate-limit": "^4.5.1",
     "jose": "^6.2.2",
-    "reflect-metadata": "^0.2.2",
-    "sanitize-html": "^2.17.2",
-    "sqlite3": "^6.0.1",
-    "typeorm": "^0.3.28"
+    "sanitize-html": "^2.17.2"
   }
 }
