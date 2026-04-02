@@ -1,8 +1,12 @@
-<img src="public/nanobook.png" width="300">
+<img src="public/nanobook.png" width="400">
 
 # nanobook
 
 a self-hostable guestbook!
+
+| screenshot                    |
+|:-----------------------------:|
+| ![screenshot](screenshot.png) |
 
 ## prerequisites
 
