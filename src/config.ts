@@ -4,6 +4,8 @@ export const Config = z.object({
   name: z.string(),
   header: z.string(),
 
+  port: z.number().max(9999).default(3000),
+
   admin: z.object({
     username: z.string(),
     password: z.string(),

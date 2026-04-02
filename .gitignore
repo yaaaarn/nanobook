@@ -5,3 +5,4 @@ nanobook.db
 config.yaml
 emojis
 drizzle
+*.bun-build

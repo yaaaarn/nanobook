@@ -2,9 +2,12 @@ import { Config } from "./config";
 import { version } from "../package.json";
 import fs from "fs";
 import z from "zod";
+import { dirname, join } from "path";
 
 function loadConfigSync() {
-  const text = fs.readFileSync("config.yaml", { encoding: "utf-8" }); // sync read
+  const text = fs.readFileSync(join(dirname(process.execPath), "config.yaml"), {
+    encoding: "utf-8",
+  }); // sync read
   return Config.parse(Bun.YAML.parse(text)); // sync parse
 }
 

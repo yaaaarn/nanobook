@@ -11,6 +11,8 @@ a self-hostable guestbook!
 
 ## installation
 
+1. download the latest release: https://github.com/yaaaarn/nanobook/releases
+
 ## configuration
 
 the configuration file should be located at `config.yaml`.

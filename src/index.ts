@@ -13,7 +13,8 @@ import { migrate } from "drizzle-orm/bun-sqlite/migrator";
 
 import { drizzle } from "drizzle-orm/bun-sqlite";
 import { Database } from "bun:sqlite";
-import { version } from "./globals";
+import { dirname, join } from "path";
+import { config } from "./globals";
 
 const [, , mode] = process.argv;
 
@@ -24,9 +25,17 @@ migrate(db, { migrationsFolder: "./drizzle" });
 new Elysia()
   .use(logger())
   .use(ip())
-  .use(staticPlugin({ prefix: "/", directive: "no-cache" }))
+  .use(
+    staticPlugin({
+      prefix: "/",
+      directive: "no-cache",
+      assets: join(dirname(process.execPath), "public"),
+    }),
+  )
   .use(html())
   .use(auth)
   .use(user)
   .use(admin)
-  .listen(3000);
+  .listen(process.env.PORT ?? 3000);
+
+console.log("nanobook is ready!");
