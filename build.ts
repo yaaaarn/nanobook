@@ -1,5 +1,6 @@
 import { mkdir, cp, rm } from "fs/promises";
 import { join } from "path";
+import { execSync } from "child_process";
 
 const targets: Bun.Build.CompileTarget[] = [
   "bun-darwin-x64",
@@ -26,6 +27,12 @@ const baseBuildOptions = {
   bytecode: true,
   outdir: "dist",
 };
+
+console.log("Generating Drizzle client...");
+execSync("bunx drizzle-kit generate --dialect sqlite --schema ./schema.ts", {
+  stdio: "inherit",
+});
+console.log("Drizzle client generated!");
 
 await Promise.all(
   targets.map(async (target) => {
