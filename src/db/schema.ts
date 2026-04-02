@@ -4,7 +4,7 @@ export const messagesTable = sqliteTable("messages", {
   id: integer("id").primaryKey(),
   name: text("name").notNull(),
   content: text("content").notNull(),
-  createdAt: integer({ mode: "timestamp_ms" }).default(new Date()).notNull(),
+  createdAt: integer({ mode: "timestamp_ms" }).notNull(),
   ipAddress: text("ip_address").notNull(),
   hidden: integer({ mode: "boolean" }).default(false).notNull(),
   extraFields: text({ mode: "json" })

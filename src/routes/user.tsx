@@ -139,6 +139,7 @@ export const user = new Elysia()
         content: message.slice(0, MESSAGE_MAX),
         ipAddress: ip,
         extraFields: {},
+        createdAt: new Date(),
       };
 
       Object.entries(config.extraFields ?? {}).forEach(([key]) => {
