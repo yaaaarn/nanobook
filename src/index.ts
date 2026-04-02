@@ -11,16 +11,11 @@ import { ip } from "elysia-ip";
 
 import { migrate } from "drizzle-orm/bun-sqlite/migrator";
 
-import { drizzle } from "drizzle-orm/bun-sqlite";
-import { Database } from "bun:sqlite";
-import { dirname, join } from "path";
-import { config } from "./globals";
+import { db } from "./db";
 
-const [, , mode] = process.argv;
+import { join, dirname } from "path";
 
-const sqlite = new Database("nanobook.db");
-const db = drizzle(sqlite);
-migrate(db, { migrationsFolder: "./drizzle" });
+migrate(db, { migrationsFolder: join(dirname(process.execPath), "drizzle") });
 
 new Elysia()
   .use(logger())

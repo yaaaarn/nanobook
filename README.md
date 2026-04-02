@@ -12,6 +12,12 @@ a self-hostable guestbook!
 ## installation
 
 1. download the latest release: https://github.com/yaaaarn/nanobook/releases
+2. modify `config.yaml`
+3. run!
+
+### docker compose
+
+coming soon...
 
 ## configuration
 
