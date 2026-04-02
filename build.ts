@@ -69,6 +69,9 @@ await Promise.all(
     // copy the config file
     await cp("./config.example.yaml", join(stagingDir, "config.yaml"));
 
+    // copy the drizzle metadata
+    await cp("./drizzle", join(stagingDir, "drizzle"), { recursive: true });
+
     // create tar.gz
     const tarFile = join("dist", `${outfile}.tar.gz`);
 
