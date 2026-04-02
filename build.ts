@@ -29,9 +29,12 @@ const baseBuildOptions = {
 };
 
 console.log("Generating Drizzle client...");
-execSync("bunx drizzle-kit generate --dialect sqlite --schema ./schema.ts", {
-  stdio: "inherit",
-});
+execSync(
+  "bunx drizzle-kit generate --dialect sqlite --schema ./src/db/schema.ts",
+  {
+    stdio: "inherit",
+  },
+);
 console.log("Drizzle client generated!");
 
 await Promise.all(
