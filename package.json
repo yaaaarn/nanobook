@@ -5,7 +5,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "bun run --hot src/index.ts",
+    "dev": "DIRECTORY=\"$PWD\" bun run --hot src/index.ts",
+    "start": "DIRECTORY=\"$PWD\" bun run src/index.ts",
     "build": "bun run build.ts"
   },
   "devDependencies": {

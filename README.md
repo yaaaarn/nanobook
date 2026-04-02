@@ -23,6 +23,8 @@ coming soon...
 
 the configuration file should be located at `config.yaml`.
 
+the port can be changed by setting the `PORT` environment variable.
+
 ### properties
 
 see `config.example.yaml`

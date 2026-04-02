@@ -5,7 +5,7 @@ import z from "zod";
 import { dirname, join } from "path";
 
 function loadConfigSync() {
-  const text = fs.readFileSync(join(dirname(process.execPath), "config.yaml"), {
+  const text = fs.readFileSync(join(activeDirectory, "config.yaml"), {
     encoding: "utf-8",
   }); // sync read
   return Config.parse(Bun.YAML.parse(text)); // sync parse
@@ -21,3 +21,6 @@ export const config = new Proxy({} as ConfigType, {
 });
 
 export { version };
+
+export const activeDirectory =
+  process.env.DIRECTORY ?? dirname(process.execPath);

@@ -14,8 +14,9 @@ import { migrate } from "drizzle-orm/bun-sqlite/migrator";
 import { db } from "./db";
 
 import { join, dirname } from "path";
+import { activeDirectory } from "./globals";
 
-migrate(db, { migrationsFolder: join(dirname(process.execPath), "drizzle") });
+migrate(db, { migrationsFolder: join(activeDirectory, "drizzle") });
 
 new Elysia()
   .use(logger())
@@ -24,7 +25,7 @@ new Elysia()
     staticPlugin({
       prefix: "/",
       directive: "no-cache",
-      assets: join(dirname(process.execPath), "public"),
+      assets: join(activeDirectory, "public"),
     }),
   )
   .use(html())
